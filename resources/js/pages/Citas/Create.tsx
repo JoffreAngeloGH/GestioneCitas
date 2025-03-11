@@ -3,6 +3,9 @@ import { useForm } from "@inertiajs/react";
 import { Head } from "@inertiajs/react";
 import AppLayout from "@/layouts/app-layout";
 
+import { buttonVariants } from "@/components/ui/button"
+
+
 const CreateCita: React.FC = () => {
     const { data, setData, post, processing, errors } = useForm({
         nombre: "",
@@ -82,7 +85,7 @@ const CreateCita: React.FC = () => {
                     <button
                         type="submit"
                         disabled={processing}
-                        className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+                        className={buttonVariants({ variant: "secondary" })}
                     >
                         {processing ? "Guardando..." : "Agendar Cita"}
                     </button>
