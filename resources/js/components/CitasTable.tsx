@@ -20,7 +20,7 @@ const CitasTable: React.FC<CitasTableProps> = ({ citas }) => {
         if (confirm("¿Estás seguro de que deseas eliminar esta cita?")) {
             router.delete(route("citas.destroy", id), {
                 onSuccess: () => alert("Cita eliminada correctamente"),
-                onError: (errors: unknown) => alert("Error al eliminar la cita"),
+                onError: () => alert("Error al eliminar la cita"),
             });
         }
     };
