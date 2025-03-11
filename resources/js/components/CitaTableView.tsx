@@ -26,15 +26,6 @@ interface CitasTableViewProps {
 }
 
 const CitasTableView: React.FC<CitasTableViewProps> = ({ citas }) => {
-    const eliminarCita = (id: number) => {
-        if (confirm("¿Estás seguro de que deseas eliminar esta cita?")) {
-            router.delete(route("citas.destroy", id), {
-                onSuccess: () => alert("Cita eliminada correctamente"),
-                onError: (errors: unknown) => alert("Error al eliminar la cita"),
-            });
-        }
-    };
-
     return (
         <div className="overflow-x-auto">
             <Table>
